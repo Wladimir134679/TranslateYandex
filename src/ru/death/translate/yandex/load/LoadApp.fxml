@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="129.0" prefWidth="343.0" style="-fx-background-color: #00000000;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.161" fx:controller="ru.death.translate.yandex.load.LoadAppController">
+   <children>
+      <Label alignment="CENTER" layoutX="11.0" layoutY="12.0" prefHeight="106.0" prefWidth="322.0" text="Загрузка...">
+         <font>
+            <Font name="Calibri" size="38.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
