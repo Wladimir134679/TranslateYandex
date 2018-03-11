@@ -1,12 +1,12 @@
 package ru.death.translate.yandex;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.BitSet;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.commons.codec.net.URLCodec;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -72,7 +72,14 @@ public class MyHttpClient {
     
     public static String getReply(String lang, String lang1, String textOrig){
         String reply = null;
-        String text = new String(URLCodec.encodeUrl(new BitSet(), textOrig.getBytes()));
+        String text = "";
+        try{
+            text = URLEncoder.encode(textOrig, "UTF-8");
+        }
+        catch(UnsupportedEncodingException ex){
+            Logger.getLogger(MyHttpClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+;
 
         StringBuilder request = new StringBuilder();
         request.append("https://translate.yandex.net/api/v1.5/tr.json/translate")
